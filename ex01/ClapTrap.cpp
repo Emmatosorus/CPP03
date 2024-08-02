@@ -2,16 +2,16 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor was called" << std::endl;
+    std::cout << "ClapTrap : Default constructor was called" << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name)
+ClapTrap::ClapTrap( std::string const & name )
 {
     this->name = name;
-    this->hitPoints = 10;
-    this->energyPoints = 10;
-    this->attackDamage = 0;
-    std::cout << "Constructor was called" << std::endl;
+    this->hitPoints = 100;
+    this->energyPoints = 50;
+    this->attackDamage = 20;
+    std::cout << "ClapTrap : Constructor was called" << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const & c )
@@ -20,24 +20,24 @@ ClapTrap::ClapTrap( ClapTrap const & c )
     this->hitPoints = c.getHitPoints();
     this->energyPoints = c.getEnergyPoints();
     this->attackDamage = c.getAttackDamage();
-    std::cout << "Copy constructor was called" << std::endl;
+    std::cout << "ClapTrap : Copy constructor was called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor was called" << std::endl;
+    std::cout << "ClapTrap : Destructor was called" << std::endl;
 }
 
 void    ClapTrap::attack( const std::string & target)
 {
     if (energyPoints == 0)
     {
-        std::cout << "Couldn't attack due to lack of energy points" << std::endl;
+        std::cout << "ClapTrap : " << name << " couldn't attack due to lack of energy points" << std::endl;
         return ;
     }
     if (hitPoints <= 0)
     {
-        std::cout << "Couldn't attack due to lack of life" << std::endl;
+        std::cout << "ClapTrap : " << name << " couldn't attack due to lack of life" << std::endl;
         return ;
     }
     this->energyPoints--;
