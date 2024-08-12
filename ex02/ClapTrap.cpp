@@ -5,12 +5,12 @@ ClapTrap::ClapTrap()
     std::cout << "ClapTrap : Default constructor was called" << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name)
+ClapTrap::ClapTrap( std::string const & name )
 {
     this->name = name;
-    this->hitPoints = 10;
-    this->energyPoints = 10;
-    this->attackDamage = 0;
+    this->hitPoints = 100;
+    this->energyPoints = 100;
+    this->attackDamage = 30;
     std::cout << "ClapTrap : Constructor was called" << std::endl;
 }
 
@@ -23,19 +23,19 @@ ClapTrap::ClapTrap( ClapTrap const & c )
     std::cout << "ClapTrap : Copy constructor was called" << std::endl;
 }
 
+ClapTrap &ClapTrap::operator=(const ClapTrap &thing)
+{
+	this->name = thing.getName();
+	this->hitPoints = thing.getHitPoints();
+	this->energyPoints = thing.getEnergyPoints();
+	this->attackDamage = thing.getAttackDamage();
+	std::cout << "ClapTrap : Copy assignment operator was called" << std::endl;
+	return *this;
+}
+
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap : Destructor was called" << std::endl;
-}
-
-ClapTrap & ClapTrap::operator=(const ClapTrap &c)
-{
-	this->name = c.getName();
-	this->hitPoints = c.getHitPoints();
-	this->energyPoints = c.getEnergyPoints();
-	this->attackDamage = c.getAttackDamage();
-	std::cout << "ClapTrap : Copy assignment operator was called" << std::endl;
-	return *this ;
 }
 
 void    ClapTrap::attack( const std::string & target)

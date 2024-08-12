@@ -1,4 +1,4 @@
-NAME = ScavTrap
+NAME = FragTrap
 CPP = c++
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ_DIR = .obj/
@@ -8,7 +8,8 @@ OBJ_DIR = .obj/
 SRC = \
 	main.cpp \
 	ClapTrap.cpp \
-	ScavTrap.cpp
+	ScavTrap.cpp \
+	FragTrap.cpp
 
 OBJ =	$(SRC:%.cpp=$(OBJ_DIR)%.o)
 

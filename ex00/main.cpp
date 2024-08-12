@@ -18,4 +18,9 @@ int main( void )
 
 	std::cout << std::endl;
 
+	ClapTrap steve2( "Bob" );
+	steve2 = steve;
+	steve2.beRepaired(5);
+
+	std::cout << std::endl;
 }
