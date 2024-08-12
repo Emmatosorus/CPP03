@@ -28,6 +28,16 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap : Destructor was called" << std::endl;
 }
 
+ClapTrap &ClapTrap::operator=(const ClapTrap &thing)
+{
+	this->name = thing.getName();
+	this->hitPoints = thing.getHitPoints();
+	this->energyPoints = thing.getEnergyPoints();
+	this->attackDamage = thing.getAttackDamage();
+	std::cout << "ClapTrap : Copy assignment operator was called" << std::endl;
+	return *this;
+}
+
 void    ClapTrap::attack( const std::string & target)
 {
     if (energyPoints == 0)
